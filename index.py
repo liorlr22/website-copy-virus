@@ -1,7 +1,6 @@
 from flask import Flask, render_template, send_from_directory
 import requests
 from bs4 import BeautifulSoup
-from cssutils import parseStyle
 
 app = Flask(__name__, template_folder='templates')
 URL = "https://www.techwithtim.net"
@@ -24,5 +23,5 @@ if __name__ == "__main__":
 
     @app.route("/download")
     def download():
-        return send_from_directory(path='../resources', filename='thumbnail.png', as_attachment=True)
+        return render_template("download_file.html")
     app.run(debug=True)
