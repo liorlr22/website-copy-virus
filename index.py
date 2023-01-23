@@ -23,7 +23,7 @@ try:
 except Exception as e:
     with open(file, "wb") as f_output:
         f_output.write(soup.prettify("utf-8"))
-    messagebox.showinfo(title="alert", message=e)
+    messagebox.showinfo(title="alert", message=str(e))
 
 
 if __name__ == "__main__":
